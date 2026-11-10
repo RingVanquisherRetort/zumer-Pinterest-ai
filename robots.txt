@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Ignore cache-busting query parameter used for preview links
+Clean-param: v /
+
 Sitemap: https://zumerai.ru/sitemap.xml
