@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zumerai.ru/sitemap.xml
