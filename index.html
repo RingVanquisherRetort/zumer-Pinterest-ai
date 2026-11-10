@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffd400">
+  <meta name="theme-color" content="#160d2c">
   <meta name="description" content="Зумер помогает разобраться, как стать курьером Яндекс Еды: регистрация, первые шаги и поддержка в Telegram. Перейди по партнёрской ссылке и изучи условия подключения.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://zumerai.ru/">
@@ -107,6 +107,88 @@
     @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
     @media(max-width:760px){.benefits{grid-template-columns:1fr}.contact-panel{align-items:flex-start;flex-direction:column;padding:26px}.wrap{width:min(100% - 30px,560px)}header{padding:17px 0}.hero{padding:30px 0 48px}.hero-grid{grid-template-columns:1fr;gap:28px}h1{letter-spacing:-3px;font-size:clamp(47px,14vw,70px)}.lead{font-size:15px}.visual{min-height:310px;padding:18px}.visual-card strong{font-size:25px}.section{padding:48px 0}.steps{grid-template-columns:1fr}.step{min-height:0}.band{padding:27px;align-items:flex-start;flex-direction:column}.foot-top,.foot-bottom{flex-direction:column}.nav{display:none}}
+  </style>
+
+
+  <style id="zumer-redesign">
+    :root{--yellow:#ffbd28;--ink:#24133f;--muted:#b8abc9;--paper:#160d2c;--white:#fff;--purple:#281447;--orange:#ff8a1c}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{background:#160d2c;color:#fff;font-family:Manrope,Arial,sans-serif}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 0%,#46216b 0,transparent 42%),radial-gradient(ellipse at 0% 48%,#281447 0,transparent 48%),#160d2c}
+    .wrap{width:min(1160px,calc(100% - 44px))}
+    header{position:sticky;top:0;z-index:20;padding:13px 0;background:#1a1030eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff16}
+    .brand{color:#fff;font-size:24px;letter-spacing:-1px}
+    .mark{background:linear-gradient(135deg,#ffd34c,#ff8a1c);color:#24133f;border-radius:12px;box-shadow:0 5px 18px #ffad2933}
+    .nav{color:#d8cde5;font-size:11px;letter-spacing:.7px}
+    .nav:hover{color:#ffbd28}
+    .hero{padding:55px 0 64px}
+    .hero-grid{grid-template-columns:1.08fr .92fr;gap:48px}
+    .eyebrow{background:#ffffff12;border:1px solid #ffffff22;color:#ffca51;padding:10px 14px;letter-spacing:1.2px}
+    .dot{background:#ff9a24;box-shadow:0 0 0 4px #ff9a2422}
+    h1{font-size:clamp(48px,6.5vw,78px);letter-spacing:-4px;line-height:1.01;color:#fff;margin:23px 0 18px}
+    h1 span{background:linear-gradient(100deg,#ffd34c,#ff9229);color:#24133f;padding:0 10px;border-radius:8px}
+    .lead{color:#d2c7df;font-size:16px;line-height:1.8}
+    .btn{background:linear-gradient(110deg,#ffbd28,#ff851c);color:#24133f;border-radius:12px;padding:17px 23px;box-shadow:0 10px 25px #ff8c1c33;transition:transform .2s,filter .2s}
+    .btn:hover{background:linear-gradient(110deg,#ffd45a,#ff9b36);filter:brightness(1.04);transform:translateY(-3px)}
+    .btn .arrow{color:#24133f}
+    .note{color:#a99ab9}
+    .visual{background:linear-gradient(145deg,#49246c,#25123f 68%,#1a1030);border:1px solid #ffffff20;border-radius:28px;min-height:430px;box-shadow:0 28px 70px #08041277}
+    .visual:before,.visual:after{border-color:#ffffff20}
+    .route{opacity:.3}
+    .slide-card{background:#fff;color:#291746;border:1px solid #ffffff80;box-shadow:0 20px 45px #09041466;border-radius:18px}
+    .slide-card small{color:#b16b00}
+    .slide-card strong{color:#291746;font-size:30px}
+    .slide-card p{color:#756887}
+    .slide-dots i{background:#ffffff45}
+    .slide-dots i:after{background:#ffbd28}
+    .section{padding:66px 0}
+    .kicker{color:#ffbd45;letter-spacing:1.8px}
+    h2{color:#fff;font-size:clamp(32px,4vw,46px);letter-spacing:-1.8px}
+    .sub{color:#c1b4d0}
+    .steps,.benefits{gap:16px}
+    .step,.benefit{background:linear-gradient(145deg,#fff,#f8f4fc);color:#291746;border:1px solid #ffffff45;border-radius:18px;box-shadow:0 12px 32px #0804122b}
+    .step h3,.benefit h3{color:#291746}
+    .step p,.benefit p{color:#776b88}
+    .num,.benefit .symbol{background:linear-gradient(135deg,#ffd34c,#ff941f);color:#281541}
+    .step:hover,.benefit:hover{box-shadow:0 20px 40px #08041255}
+    .faq-list details{background:#fff;color:#291746;border:1px solid #ffffff40;border-radius:15px;box-shadow:0 8px 25px #08041222}
+    .faq-list summary{color:#291746}
+    .faq-list p{color:#776b88}
+    .contact-panel{background:linear-gradient(110deg,#ffd34c,#ff9a24);color:#281541;border-radius:22px;box-shadow:0 18px 45px #09041444}
+    .contact-panel .kicker{color:#704000}
+    .contact-panel h2{color:#281541}
+    .contact-panel p{color:#5b3c17}
+    .contact-link{background:#281541;color:#fff;border-radius:11px}
+    .band{background:linear-gradient(125deg,#49246c,#25123f);border:1px solid #ffffff22;box-shadow:0 18px 50px #08041255;border-radius:22px}
+    .band p{color:#c9bbd7}
+    .btn-yellow{background:linear-gradient(110deg,#ffd34c,#ff8f20);color:#281541}
+    .btn-yellow:hover{background:linear-gradient(110deg,#ffe078,#ffa64d)}
+    footer{margin-top:50px;background:#10091f;border-top:1px solid #ffffff18;color:#fff}
+    .foot-brand p,.legal,.foot-bottom{color:#aa9bbd}
+    .legal strong{color:#fff}
+    .foot-bottom{border-color:#ffffff1c}
+    .foot-bottom a{color:#ffca51}
+    .reveal{animation:rise .8s both}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 30px,560px)}
+      header{padding:11px 0}
+      .hero{padding:35px 0 48px}
+      .hero-grid{grid-template-columns:1fr;gap:27px}
+      h1{font-size:clamp(46px,13vw,68px);letter-spacing:-2.8px}
+      .lead{font-size:14px}
+      .visual{min-height:305px;padding:18px}
+      .slide{padding:18px}
+      .slide-card{padding:20px}
+      .slide-card strong{font-size:26px}
+      .section{padding:48px 0}
+      .steps,.benefits{grid-template-columns:1fr}
+      .step{min-height:0}
+      .contact-panel{padding:25px}
+      .band{padding:26px}
+      .foot-top,.foot-bottom{flex-direction:column}
+      .nav{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 
   <script type="application/ld+json">
