@@ -1,14 +1,127 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Zumer</title></head>
-<body><main>
-<h1>Zumer</h1>
-<p>Проект привлечения курьеров к сотрудничеству с партнёрами сервисов доставки.</p>
-<h2>Оператор проекта</h2>
-<p>Индивидуальный предприниматель Темирханов Иван Андреевич</p>
-<p>ИНН: 261200859701</p>
-<p>ОГРНИП: 324265100015513</p>
-<p>Юридический адрес: 357870, Россия, Ставропольский край, Курский район, село Эдиссия, улица Шаумяна, дом 12.</p>
-<p>Контактная почта: <a href="mailto:myeasystart@yandex.ru">myeasystart@yandex.ru</a></p>
-<p><a href="privacy.html">Политика конфиденциальности</a></p>
-</main></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffd400">
+  <meta name="description" content="ZUMER помогает начать сотрудничество с сервисом Яндекс Еда в качестве курьера. Узнайте, как подключиться.">
+  <title>ZUMER — начни свой маршрут</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--yellow:#ffd400;--ink:#171717;--muted:#666;--paper:#f7f7f4;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:900;font-size:25px;letter-spacing:-1.5px}
+    .mark{width:38px;height:38px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;font-size:22px;font-weight:900}
+    .nav{font-size:13px;font-weight:700;color:#555;text-decoration:none}
+    .hero{padding:46px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff2a8;padding:9px 13px;border-radius:99px;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+    .dot{width:7px;height:7px;background:#171717;border-radius:50%}
+    h1{font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-5px;margin:22px 0 20px;font-weight:900}
+    h1 span{background:var(--yellow);padding:0 9px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .lead{font-size:17px;line-height:1.75;color:#555;max-width:540px;margin:0 0 27px}
+    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 23px;border-radius:13px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:900;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px);background:#333}
+    .btn .arrow{color:var(--yellow);font-size:20px}
+    .note{font-size:11px;color:#777;line-height:1.5;max-width:310px}
+    .visual{min-height:430px;background:var(--yellow);border-radius:28px;position:relative;overflow:hidden;padding:30px;display:flex;align-items:flex-end}
+    .visual:before{content:"";position:absolute;width:330px;height:330px;border:2px solid rgba(23,23,23,.18);border-radius:50%;top:-85px;right:-70px}
+    .visual:after{content:"";position:absolute;width:230px;height:230px;border:2px solid rgba(23,23,23,.18);border-radius:50%;top:-35px;right:-20px}
+    .route{position:absolute;inset:0;width:100%;height:100%;opacity:.22}
+    .visual-card{position:relative;z-index:1;background:#171717;color:#fff;border-radius:20px;padding:23px;width:100%;box-shadow:0 18px 45px #0002}
+    .visual-card small{font-size:10px;letter-spacing:1.6px;color:var(--yellow);font-weight:900;text-transform:uppercase}
+    .visual-card strong{display:block;font-size:29px;line-height:1.1;letter-spacing:-1px;margin:12px 0}
+    .visual-card p{margin:0;color:#c9c9c9;font-size:12px;line-height:1.6}
+    .section{padding:65px 0}
+    .section-head{max-width:620px;margin-bottom:30px}
+    .kicker{font-size:11px;letter-spacing:1.6px;font-weight:900;color:#8b7600;text-transform:uppercase}
+    h2{font-size:clamp(31px,4vw,45px);line-height:1.08;letter-spacing:-2px;margin:12px 0}
+    .sub{color:#666;line-height:1.7;font-size:14px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .step{background:#fff;border:1px solid #ecece7;border-radius:19px;padding:25px;min-height:190px}
+    .num{width:36px;height:36px;border-radius:11px;background:var(--yellow);display:grid;place-items:center;font-weight:900}
+    .step h3{font-size:17px;margin:22px 0 8px}
+    .step p{font-size:13px;line-height:1.65;color:#666;margin:0}
+    .band{background:#171717;color:#fff;border-radius:25px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .band h2{max-width:570px;margin:0}
+    .band p{color:#bbb;font-size:13px;line-height:1.6;margin:12px 0 0}
+    .btn-yellow{background:var(--yellow);color:#171717;white-space:nowrap}
+    .btn-yellow:hover{background:#ffe15b}
+    footer{margin-top:65px;background:#eee;border-top:1px solid #e3e3df;padding:34px 0 28px}
+    .foot-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+    .foot-brand p{font-size:12px;color:#777;line-height:1.6;max-width:300px}
+    .legal{font-size:11px;color:#666;line-height:1.9;max-width:620px}
+    .legal strong{color:#222}
+    .foot-bottom{border-top:1px solid #dcdcd6;margin-top:24px;padding-top:17px;display:flex;justify-content:space-between;gap:15px;font-size:11px;color:#888}
+    .foot-bottom a{color:#555}
+    @media(max-width:760px){.wrap{width:min(100% - 30px,560px)}header{padding:17px 0}.hero{padding:30px 0 48px}.hero-grid{grid-template-columns:1fr;gap:28px}h1{letter-spacing:-3px;font-size:clamp(47px,14vw,70px)}.lead{font-size:15px}.visual{min-height:310px;padding:18px}.visual-card strong{font-size:25px}.section{padding:48px 0}.steps{grid-template-columns:1fr}.step{min-height:0}.band{padding:27px;align-items:flex-start;flex-direction:column}.foot-top,.foot-bottom{flex-direction:column}.nav{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="Zumer — на главную"><span class="mark">Z</span> ZUMER</a>
+      <a class="nav" href="#how">КАК ЭТО РАБОТАЕТ</a>
+      <a class="nav" href="#contacts">КОНТАКТЫ</a>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> ТВОЙ СТАРТ В ДОСТАВКЕ</div>
+            <h1>ТВОЙ ГОРОД.<br>ТВОЙ <span>ТЕМП.</span></h1>
+            <p class="lead">ZUMER помогает кандидатам подключиться к сотрудничеству с сервисом Яндекс Еда в качестве курьера. Разберёмся с первым шагом и подскажем, куда двигаться дальше.</p>
+            <div class="actions">
+              <a class="btn" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" target="_blank" rel="noopener noreferrer">СТАТЬ КУРЬЕРОМ <span class="arrow">↗</span></a>
+              <span class="note">Переход на страницу регистрации сервиса Яндекс Еда.</span>
+            </div>
+          </div>
+          <div class="visual" aria-label="Графическая иллюстрация маршрута курьера">
+            <svg class="route" viewBox="0 0 500 500" fill="none" aria-hidden="true"><path d="M70 90C180 20 210 210 330 155S440 220 390 300 220 330 260 430" stroke="#171717" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 13"/><circle cx="70" cy="90" r="10" fill="#171717"/><circle cx="260" cy="430" r="10" fill="#171717"/></svg>
+            <div class="visual-card">
+              <small>МАРШРУТ НАЧИНАЕТСЯ ЗДЕСЬ</small>
+              <strong>Не стой на месте.<br>Выбирай свой путь.</strong>
+              <p>Узнай условия подключения и реши, подходит ли тебе формат работы курьером.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="how">
+        <div class="section-head">
+          <div class="kicker">БЕЗ ЛИШНЕЙ СЛОЖНОСТИ</div>
+          <h2>Три шага до старта</h2>
+          <p class="sub">Начни с регистрации, внимательно ознакомься с условиями и пройди необходимые этапы подключения.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="num">01</div><h3>Оставь заявку</h3><p>Перейди по нашей ссылке на страницу регистрации и заполни необходимые данные.</p></article>
+          <article class="step"><div class="num">02</div><h3>Ознакомься с условиями</h3><p>Изучи требования, доступные форматы доставки и условия сотрудничества на стороне сервиса.</p></article>
+          <article class="step"><div class="num">03</div><h3>Пройди подключение</h3><p>Следуй инструкциям сервиса и заверши необходимые шаги для начала работы.</p></article>
+        </div>
+      </section>
+      <section class="section" style="padding-top:0">
+        <div class="band">
+          <div><h2>Готов начать свой маршрут?</h2><p>Переходи к регистрации и узнай подробности на официальной странице сервиса.</p></div>
+          <a class="btn btn-yellow" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ К РЕГИСТРАЦИИ ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer id="contacts">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand"><a class="brand" href="#top"><span class="mark">Z</span> ZUMER</a><p>Партнёрский проект по привлечению кандидатов для сотрудничества в сфере доставки.</p></div>
+        <div class="legal"><strong>Оператор проекта</strong><br>Индивидуальный предприниматель Темирханов Иван Андреевич<br>ИНН: 261200859701<br>ОГРНИП: 324265100015513<br>Адрес: 357870, Россия, Ставропольский край, Курский район, село Эдиссия, улица Шаумяна, дом 12.<br>Почта: <a href="mailto:myeasystart@yandex.ru">myeasystart@yandex.ru</a></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 ZUMER</span><a href="privacy.html">Политика конфиденциальности</a><span>ZUMER не является самим сервисом Яндекс Еда. Регистрация проходит на стороне сервиса.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
