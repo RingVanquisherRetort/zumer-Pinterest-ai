@@ -22,4 +22,10 @@
   <url><loc>https://zumerai.ru/tg/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zumerai.ru/kk/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zumerai.ru/ky/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/ru/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://zumerai.ru/tk/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://zumerai.ru/uz/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://zumerai.ru/tg/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://zumerai.ru/kk/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://zumerai.ru/ky/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
