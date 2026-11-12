@@ -18,10 +18,10 @@ h1{font-size:clamp(30px,6vw,48px);margin:0 0 12px;letter-spacing:-1.5px}.sub{col
 <div class="brand"><span class="mark">З</span>Зумер</div>
 <h1>Выберите язык</h1><p class="sub">На каком языке вам удобнее пользоваться сайтом?</p>
 <div class="languages">
-<a class="language" href="/ru/"><span class="flag">🇷🇺</span><span><span class="name">Русский</span><br><span class="native">Русский язык</span></span><span class="arrow">↗</span></a>
-<a class="language" href="/tk/"><span class="flag">🇹🇲</span><span><span class="name">Туркменский</span><br><span class="native">Türkmen dili</span></span><span class="arrow">↗</span></a>
-<a class="language" href="/uz/"><span class="flag">🇺🇿</span><span><span class="name">Узбекский</span><br><span class="native">O‘zbek tili</span></span><span class="arrow">↗</span></a>
-<a class="language" href="/tg/"><span class="flag">🇹🇯</span><span><span class="name">Таджикский</span><br><span class="native">Тоҷикӣ</span></span><span class="arrow">↗</span></a>
-<a class="language" href="/kk/"><span class="flag">🇰🇿</span><span><span class="name">Казахский</span><br><span class="native">Қазақ тілі</span></span><span class="arrow">↗</span></a>
-<a class="language" href="/ky/"><span class="flag">🇰🇬</span><span><span class="name">Кыргызский</span><br><span class="native">Кыргыз тили</span></span><span class="arrow">↗</span></a>
-</div></main></body></html>
+<a class="language" onclick="localStorage.setItem('zumer-lang','ru')" href="/ru/"><span class="flag">🇷🇺</span><span><span class="name">Русский</span><br><span class="native">Русский язык</span></span><span class="arrow">↗</span></a>
+<a class="language" onclick="localStorage.setItem('zumer-lang','tk')" href="/tk/"><span class="flag">🇹🇲</span><span><span class="name">Туркменский</span><br><span class="native">Türkmen dili</span></span><span class="arrow">↗</span></a>
+<a class="language" onclick="localStorage.setItem('zumer-lang','uz')" href="/uz/"><span class="flag">🇺🇿</span><span><span class="name">Узбекский</span><br><span class="native">O‘zbek tili</span></span><span class="arrow">↗</span></a>
+<a class="language" onclick="localStorage.setItem('zumer-lang','tg')" href="/tg/"><span class="flag">🇹🇯</span><span><span class="name">Таджикский</span><br><span class="native">Тоҷикӣ</span></span><span class="arrow">↗</span></a>
+<a class="language" onclick="localStorage.setItem('zumer-lang','kk')" href="/kk/"><span class="flag">🇰🇿</span><span><span class="name">Казахский</span><br><span class="native">Қазақ тілі</span></span><span class="arrow">↗</span></a>
+<a class="language" onclick="localStorage.setItem('zumer-lang','ky')" href="/ky/"><span class="flag">🇰🇬</span><span><span class="name">Кыргызский</span><br><span class="native">Кыргыз тили</span></span><span class="arrow">↗</span></a>
+</div></main><script>const saved=localStorage.getItem('zumer-lang');if(saved&&location.pathname==='/')location.replace('/'+saved+'/');</script></body></html>
