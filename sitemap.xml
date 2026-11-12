@@ -16,4 +16,10 @@
   <url><loc>https://zumerai.ru/kk/guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zumerai.ru/ky/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://zumerai.ru/ky/guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/ru/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/tk/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/uz/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/tg/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/kk/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zumerai.ru/ky/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
