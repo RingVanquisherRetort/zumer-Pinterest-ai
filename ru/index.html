@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160d2c">
+  <meta name="description" content="Зумер помогает разобраться, как стать курьером Яндекс Еды: регистрация, первые шаги и поддержка в Telegram. Перейди по партнёрской ссылке и изучи условия подключения.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://zumerai.ru/ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Зумер">
+  <meta property="og:title" content="Зумер - как стать курьером Яндекс Еды">
+  <meta property="og:description" content="Помогаю разобраться с регистрацией и первыми шагами для сотрудничества с Яндекс Едой.">
+  <meta property="og:url" content="https://zumerai.ru/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Зумер - начни свой маршрут">
+  <meta name="twitter:description" content="Понятный старт для тех, кто рассматривает работу курьером Яндекс Еды.">
+  <title>Как стать курьером Яндекс Еды - Зумер | Регистрация и помощь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--yellow:#ffd400;--ink:#171717;--muted:#666;--paper:#f7f7f4;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:900;font-size:25px;letter-spacing:-1.5px}
+    .mark{width:38px;height:38px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;font-size:22px;font-weight:900}
+    .nav{font-size:13px;font-weight:700;color:#555;text-decoration:none}
+    .hero{padding:46px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff2a8;padding:9px 13px;border-radius:99px;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+    .dot{width:7px;height:7px;background:#171717;border-radius:50%}
+    h1{font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-5px;margin:22px 0 20px;font-weight:900}
+    h1 span{background:var(--yellow);padding:0 9px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .lead{font-size:17px;line-height:1.75;color:#555;max-width:540px;margin:0 0 27px}
+    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 23px;border-radius:13px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:900;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px);background:#333}
+    .btn .arrow{color:var(--yellow);font-size:20px}
+    .note{font-size:11px;color:#777;line-height:1.5;max-width:310px}
+    .visual{min-height:430px;background:var(--yellow);border-radius:28px;position:relative;overflow:hidden;padding:30px;display:flex;align-items:flex-end;isolation:isolate}
+    .visual:before,.visual:after{animation:orbit 18s linear infinite}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    .slides{position:absolute;inset:0;z-index:1}
+    .slide{position:absolute;inset:0;padding:30px;display:flex;align-items:flex-end;opacity:0;animation:slideShow 15s infinite}
+    .slide:nth-child(2){animation-delay:5s}.slide:nth-child(3){animation-delay:10s}
+    @keyframes slideShow{0%,4%{opacity:0;transform:translateY(18px) scale(.985)}8%,29%{opacity:1;transform:translateY(0) scale(1)}34%,100%{opacity:0;transform:translateY(-12px) scale(1.01)}}
+    .slide-card{background:#171717;color:#fff;border-radius:20px;padding:23px;width:100%;box-shadow:0 18px 45px #0002}
+    .slide-card small{font-size:10px;letter-spacing:1.6px;color:var(--yellow);font-weight:900;text-transform:uppercase}
+    .slide-card strong{display:block;font-size:29px;line-height:1.1;letter-spacing:-1px;margin:12px 0}
+    .slide-card p{margin:0;color:#c9c9c9;font-size:12px;line-height:1.6}
+    .slide-dots{position:absolute;top:22px;left:30px;z-index:2;display:flex;gap:7px}
+    .slide-dots i{width:22px;height:4px;border-radius:9px;background:#17171733;overflow:hidden}
+    .slide-dots i:after{content:"";display:block;height:100%;width:0;background:#171717;animation:dotFill 15s infinite}
+    .slide-dots i:nth-child(2):after{animation-delay:5s}.slide-dots i:nth-child(3):after{animation-delay:10s}
+    @keyframes dotFill{0%,4%{width:0}8%,29%{width:100%}34%,100%{width:100%}}
+    .float{animation:float 5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    .visual:before{content:"";position:absolute;width:330px;height:330px;border:2px solid rgba(23,23,23,.18);border-radius:50%;top:-85px;right:-70px}
+    .visual:after{content:"";position:absolute;width:230px;height:230px;border:2px solid rgba(23,23,23,.18);border-radius:50%;top:-35px;right:-20px}
+    .route{position:absolute;inset:0;width:100%;height:100%;opacity:.22}
+    .visual-card{position:relative;z-index:1;background:#171717;color:#fff;border-radius:20px;padding:23px;width:100%;box-shadow:0 18px 45px #0002}
+    .visual-card small{font-size:10px;letter-spacing:1.6px;color:var(--yellow);font-weight:900;text-transform:uppercase}
+    .visual-card strong{display:block;font-size:29px;line-height:1.1;letter-spacing:-1px;margin:12px 0}
+    .visual-card p{margin:0;color:#c9c9c9;font-size:12px;line-height:1.6}
+    .section{padding:65px 0}
+    .section-head{max-width:620px;margin-bottom:30px}
+    .kicker{font-size:11px;letter-spacing:1.6px;font-weight:900;color:#8b7600;text-transform:uppercase}
+    h2{font-size:clamp(31px,4vw,45px);line-height:1.08;letter-spacing:-2px;margin:12px 0}
+    .sub{color:#666;line-height:1.7;font-size:14px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .step{background:#fff;border:1px solid #ecece7;border-radius:19px;padding:25px;min-height:190px;transition:transform .25s,box-shadow .25s}.step:hover,.benefit:hover{transform:translateY(-6px);box-shadow:0 16px 35px #17171712}
+    .num{width:36px;height:36px;border-radius:11px;background:var(--yellow);display:grid;place-items:center;font-weight:900}
+    .step h3{font-size:17px;margin:22px 0 8px}
+    .step p{font-size:13px;line-height:1.65;color:#666;margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .benefit{background:#fff;border:1px solid #ecece7;border-radius:19px;padding:24px;transition:transform .25s,box-shadow .25s}
+    .benefit .symbol{font-size:25px;font-weight:900;width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);border-radius:13px}
+    .benefit h3{font-size:16px;margin:18px 0 8px}
+    .benefit p{font-size:13px;line-height:1.65;color:#666;margin:0}
+    .contact-panel{background:var(--yellow);border-radius:24px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .contact-panel h2{margin:10px 0}
+    .contact-panel p{font-size:13px;line-height:1.6;color:#494000;margin:0}
+    .contact-link{display:inline-flex;background:#171717;color:#fff;text-decoration:none;padding:15px 20px;border-radius:12px;font-weight:800;font-size:13px;white-space:nowrap}
+    .band{background:#171717;color:#fff;border-radius:25px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .band h2{max-width:570px;margin:0}
+    .band p{color:#bbb;font-size:13px;line-height:1.6;margin:12px 0 0}
+    .btn-yellow{background:var(--yellow);color:#171717;white-space:nowrap}
+    .btn-yellow:hover{background:#ffe15b}
+    footer{margin-top:65px;background:#eee;border-top:1px solid #e3e3df;padding:34px 0 28px}
+    .foot-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+    .foot-brand p{font-size:12px;color:#777;line-height:1.6;max-width:300px}
+    .legal{font-size:11px;color:#666;line-height:1.9;max-width:620px}
+    .legal strong{color:#222}
+    .foot-bottom{border-top:1px solid #dcdcd6;margin-top:24px;padding-top:17px;display:flex;justify-content:space-between;gap:15px;font-size:11px;color:#888}
+    .foot-bottom a{color:#555}
+    .faq-list{display:grid;gap:10px}
+    .faq-list details{background:#fff;border:1px solid #ecece7;border-radius:15px;padding:18px 20px}
+    .faq-list summary{font-weight:800;cursor:pointer}
+    .faq-list p{font-size:13px;line-height:1.7;color:#666;margin:12px 0 0}
+    .reveal{animation:rise .8s both}
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+    @media(max-width:760px){.benefits{grid-template-columns:1fr}.contact-panel{align-items:flex-start;flex-direction:column;padding:26px}.wrap{width:min(100% - 30px,560px)}header{padding:17px 0}.hero{padding:30px 0 48px}.hero-grid{grid-template-columns:1fr;gap:28px}h1{letter-spacing:-3px;font-size:clamp(47px,14vw,70px)}.lead{font-size:15px}.visual{min-height:310px;padding:18px}.visual-card strong{font-size:25px}.section{padding:48px 0}.steps{grid-template-columns:1fr}.step{min-height:0}.band{padding:27px;align-items:flex-start;flex-direction:column}.foot-top,.foot-bottom{flex-direction:column}.nav{display:none}}
+  </style>
+
+
+  <style id="zumer-redesign">
+    :root{--yellow:#ffbd28;--ink:#24133f;--muted:#b8abc9;--paper:#160d2c;--white:#fff;--purple:#281447;--orange:#ff8a1c}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{background:#160d2c;color:#fff;font-family:Manrope,Arial,sans-serif}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 0%,#46216b 0,transparent 42%),radial-gradient(ellipse at 0% 48%,#281447 0,transparent 48%),#160d2c}
+    .wrap{width:min(1160px,calc(100% - 44px))}
+    header{position:sticky;top:0;z-index:20;padding:13px 0;background:#1a1030eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff16}
+    .brand{color:#fff;font-size:24px;letter-spacing:-1px}
+    .mark{background:linear-gradient(135deg,#ffd34c,#ff8a1c);color:#24133f;border-radius:12px;box-shadow:0 5px 18px #ffad2933}
+    .nav{color:#d8cde5;font-size:11px;letter-spacing:.7px}
+    .nav:hover{color:#ffbd28}
+    .hero{padding:55px 0 64px}
+    .hero-grid{grid-template-columns:1.08fr .92fr;gap:48px}
+    .eyebrow{background:#ffffff12;border:1px solid #ffffff22;color:#ffca51;padding:10px 14px;letter-spacing:1.2px}
+    .dot{background:#ff9a24;box-shadow:0 0 0 4px #ff9a2422}
+    h1{font-size:clamp(48px,6.5vw,78px);letter-spacing:-4px;line-height:1.01;color:#fff;margin:23px 0 18px}
+    h1 span{background:linear-gradient(100deg,#ffd34c,#ff9229);color:#24133f;padding:0 10px;border-radius:8px}
+    .lead{color:#d2c7df;font-size:16px;line-height:1.8}
+    .btn{background:linear-gradient(110deg,#ffbd28,#ff851c);color:#24133f;border-radius:12px;padding:17px 23px;box-shadow:0 10px 25px #ff8c1c33;transition:transform .2s,filter .2s}
+    .btn:hover{background:linear-gradient(110deg,#ffd45a,#ff9b36);filter:brightness(1.04);transform:translateY(-3px)}
+    .btn .arrow{color:#24133f}
+    .note{color:#a99ab9}
+    .visual{background:linear-gradient(145deg,#49246c,#25123f 68%,#1a1030);border:1px solid #ffffff20;border-radius:28px;min-height:430px;box-shadow:0 28px 70px #08041277}
+    .visual:before,.visual:after{border-color:#ffffff20}
+    .route{opacity:.3}
+    .slide-card{background:#fff;color:#291746;border:1px solid #ffffff80;box-shadow:0 20px 45px #09041466;border-radius:18px}
+    .slide-card small{color:#b16b00}
+    .slide-card strong{color:#291746;font-size:30px}
+    .slide-card p{color:#756887}
+    .slide-dots i{background:#ffffff45}
+    .slide-dots i:after{background:#ffbd28}
+    .section{padding:66px 0}
+    .kicker{color:#ffbd45;letter-spacing:1.8px}
+    h2{color:#fff;font-size:clamp(32px,4vw,46px);letter-spacing:-1.8px}
+    .sub{color:#c1b4d0}
+    .steps,.benefits{gap:16px}
+    .step,.benefit{background:linear-gradient(145deg,#fff,#f8f4fc);color:#291746;border:1px solid #ffffff45;border-radius:18px;box-shadow:0 12px 32px #0804122b}
+    .step h3,.benefit h3{color:#291746}
+    .step p,.benefit p{color:#776b88}
+    .num,.benefit .symbol{background:linear-gradient(135deg,#ffd34c,#ff941f);color:#281541}
+    .step:hover,.benefit:hover{box-shadow:0 20px 40px #08041255}
+    .faq-list details{background:#fff;color:#291746;border:1px solid #ffffff40;border-radius:15px;box-shadow:0 8px 25px #08041222}
+    .faq-list summary{color:#291746}
+    .faq-list p{color:#776b88}
+    .contact-panel{background:linear-gradient(110deg,#ffd34c,#ff9a24);color:#281541;border-radius:22px;box-shadow:0 18px 45px #09041444}
+    .contact-panel .kicker{color:#704000}
+    .contact-panel h2{color:#281541}
+    .contact-panel p{color:#5b3c17}
+    .contact-link{background:#281541;color:#fff;border-radius:11px}
+    .band{background:linear-gradient(125deg,#49246c,#25123f);border:1px solid #ffffff22;box-shadow:0 18px 50px #08041255;border-radius:22px}
+    .band p{color:#c9bbd7}
+    .btn-yellow{background:linear-gradient(110deg,#ffd34c,#ff8f20);color:#281541}
+    .btn-yellow:hover{background:linear-gradient(110deg,#ffe078,#ffa64d)}
+    footer{margin-top:50px;background:#10091f;border-top:1px solid #ffffff18;color:#fff}
+    .foot-brand p,.legal,.foot-bottom{color:#aa9bbd}
+    .legal strong{color:#fff}
+    .foot-bottom{border-color:#ffffff1c}
+    .foot-bottom a{color:#ffca51}
+    .reveal{animation:rise .8s both}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 30px,560px)}
+      header{padding:11px 0}
+      .hero{padding:35px 0 48px}
+      .hero-grid{grid-template-columns:1fr;gap:27px}
+      h1{font-size:clamp(46px,13vw,68px);letter-spacing:-2.8px}
+      .lead{font-size:14px}
+      .visual{min-height:305px;padding:18px}
+      .slide{padding:18px}
+      .slide-card{padding:20px}
+      .slide-card strong{font-size:26px}
+      .section{padding:48px 0}
+      .steps,.benefits{grid-template-columns:1fr}
+      .step{min-height:0}
+      .contact-panel{padding:25px}
+      .band{padding:26px}
+      .foot-top,.foot-bottom{flex-direction:column}
+      .nav{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Как зарегистрироваться курьером Яндекс Еды?","acceptedAnswer":{"@type":"Answer","text":"Перейди по партнёрской ссылке Зумера на страницу регистрации сервиса, заполни заявку и следуй инструкциям на стороне Яндекс Еды."}},
+      {"@type":"Question","name":"Какие документы и требования нужны?","acceptedAnswer":{"@type":"Answer","text":"Требования могут зависеть от города и формата сотрудничества. Актуальный список документов и условий будет показан при регистрации на стороне сервиса."}},
+      {"@type":"Question","name":"Можно ли узнать условия до начала работы?","acceptedAnswer":{"@type":"Answer","text":"Перед тем как принимать решение, изучи условия, доступные форматы доставки и требования на официальной странице регистрации."}},
+      {"@type":"Question","name":"Куда написать, если нужна помощь?","acceptedAnswer":{"@type":"Answer","text":"Напиши Зумеру в Telegram за общей подсказкой. По вопросам решения заявки и условиям сервиса обращайся к Яндекс Еде."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Зумер",
+    "url":"https://zumerai.ru/",
+    "inLanguage":"ru-RU",
+    "description":"Персонаж Зумер помогает кандидатам разобраться с первыми шагами регистрации для сотрудничества с Яндекс Едой."
+  }
+  </script>
+<link rel="alternate" hreflang="ru-RU" href="https://zumerai.ru/ru/"><link rel="alternate" hreflang="tk-TM" href="https://zumerai.ru/tk/"><link rel="alternate" hreflang="uz-UZ" href="https://zumerai.ru/uz/"><link rel="alternate" hreflang="tg-TJ" href="https://zumerai.ru/tg/"><link rel="alternate" hreflang="kk-KZ" href="https://zumerai.ru/kk/"><link rel="alternate" hreflang="ky-KG" href="https://zumerai.ru/ky/"><link rel="alternate" hreflang="x-default" href="https://zumerai.ru/"></head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="Зумер — на главную"><span class="mark">З</span> Зумер</a>
+      <a class="nav" href="#how">КАК ЭТО РАБОТАЕТ</a><a class="nav" href="/ru/guide.html">ИНСТРУКЦИЯ</a>
+      <a class="nav" href="#about">ЧЕМ ПОМОГУ</a><a class="nav" href="#faq">ВОПРОСЫ</a><a class="nav" href="#contacts">КОНТАКТЫ</a>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow"><span class="dot"></span> ТВОЙ СТАРТ В ДОСТАВКЕ</div>
+            <h1>ТВОЙ ГОРОД.<br>ТВОЙ <span>ТЕМП.</span></h1>
+            <p class="lead">Я Зумер. Помогаю разобраться, как подключиться к сотрудничеству с сервисом Яндекс Еда в качестве курьера, и подсказываю, с чего начать.</p>
+            <div class="actions">
+              <a class="btn" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" target="_blank" rel="noopener noreferrer">СТАТЬ КУРЬЕРОМ <span class="arrow">↗</span></a>
+              <span class="note">Переход на страницу регистрации сервиса Яндекс Еда.</span>
+            </div>
+          </div>
+          <div class="visual" aria-label="Анимированные слайды о старте работы курьером">
+            <svg class="route" viewBox="0 0 500 500" fill="none" aria-hidden="true"><path d="M70 90C180 20 210 210 330 155S440 220 390 300 220 330 260 430" stroke="#171717" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 13"/><circle cx="70" cy="90" r="10" fill="#171717"/><circle cx="260" cy="430" r="10" fill="#171717"/></svg>
+            <div class="slide-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="slides">
+              <article class="slide"><div class="slide-card"><small>СЛАЙД 01 / СТАРТ</small><strong>Твой город.<br>Твой темп.</strong><p>Узнай, как начать путь в доставке.</p></div></article>
+              <article class="slide"><div class="slide-card"><small>СЛАЙД 02 / ПОДКЛЮЧЕНИЕ</small><strong>Первый шаг<br>без паники.</strong><p>Регистрация и дальнейшие действия - по шагам.</p></div></article>
+              <article class="slide"><div class="slide-card"><small>СЛАЙД 03 / ПОДДЕРЖКА</small><strong>Я рядом,<br>если что.</strong><p>Напиши Зумеру в Telegram, если нужна подсказка.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="how">
+        <div class="section-head">
+          <div class="kicker">БЕЗ ЛИШНЕЙ СЛОЖНОСТИ</div>
+          <h2>Три шага до старта</h2>
+          <p class="sub">Начни с регистрации, внимательно ознакомься с условиями и пройди необходимые этапы подключения.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="num">01</div><h3>Оставь заявку</h3><p>Перейди по нашей ссылке на страницу регистрации и заполни необходимые данные.</p></article>
+          <article class="step"><div class="num">02</div><h3>Ознакомься с условиями</h3><p>Изучи требования, доступные форматы доставки и условия сотрудничества на стороне сервиса.</p></article>
+          <article class="step"><div class="num">03</div><h3>Пройди подключение</h3><p>Следуй инструкциям сервиса и заверши необходимые шаги для начала работы.</p></article>
+        </div>
+      </section>
+      <section class="section" id="guide">
+        <div class="band">
+          <div><div class="kicker">ПОЛЕЗНЫЙ МАТЕРИАЛ</div><h2>Не знаешь, с чего начать?</h2><p>Я подготовил отдельную пошаговую инструкцию: регистрация, проверка условий и первые действия.</p></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-yellow" href="/ru/guide.html">ИНСТРУКЦИЯ ПО РЕГИСТРАЦИИ ↗</a><a class="btn btn-yellow" href="/ru/checklist.html">ЧТО НУЖНО КУРЬЕРУ ↗</a></div>
+        </div>
+      </section>
+      <section class="section" id="about">
+        <div class="section-head">
+          <div class="kicker">ЧЕМ Я ПОМОГУ</div>
+          <h2>Помогу разобраться с первым шагом</h2>
+          <p class="sub">Я здесь, чтобы объяснить первые шаги простым языком и помочь сориентироваться перед регистрацией курьером Яндекс Еды.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit"><div class="symbol">↗</div><h3>Понятный старт</h3><p>Я собрал основные шаги в одном месте, чтобы тебе было проще сориентироваться и перейти к регистрации.</p></article>
+          <article class="benefit"><div class="symbol">✓</div><h3>Прозрачные условия</h3><p>Требования, доступные форматы и актуальные условия уточняй на странице регистрации сервиса.</p></article>
+          <article class="benefit"><div class="symbol">✉</div><h3>Связь со мной</h3><p>Есть вопрос? Напиши мне в Telegram, постараюсь подсказать.</p></article>
+        </div>
+      </section>
+      <section class="section" id="faq">
+        <div class="section-head">
+          <div class="kicker">КОРОТКО И ПО ДЕЛУ</div>
+          <h2>Частые вопросы о работе курьером</h2>
+          <p class="sub">Базовые ответы перед регистрацией. Точные требования и доступные условия проверяй на странице сервиса.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>Как зарегистрироваться курьером Яндекс Еды?</summary><p>Нажми кнопку регистрации на сайте Зумера и перейди на страницу сервиса. Заполни заявку и следуй инструкциям, которые появятся на стороне Яндекс Еды.</p></details>
+          <details><summary>Какие документы и требования нужны?</summary><p>Требования могут зависеть от города и формата сотрудничества. Актуальный список документов и условий будет показан при регистрации на стороне сервиса.</p></details>
+          <details><summary>Можно ли узнать условия до начала работы?</summary><p>Да. Перед тем как принимать решение, внимательно изучи условия, доступные форматы доставки и требования на официальной странице регистрации.</p></details>
+          <details><summary>Куда написать, если нужна помощь?</summary><p>Напиши Зумеру в Telegram. Я помогу сориентироваться по первым шагам. Вопросы о решении заявки и условиях сервиса уточняй у Яндекс Еды.</p></details>
+        </div>
+      </section>
+      <section class="section" id="contacts">
+        <div class="contact-panel">
+          <div><div class="kicker">МЫ НА СВЯЗИ</div><h2>Остались вопросы?</h2><p>Напиши нам. По вопросам регистрации и условий работы также ориентируйся на информацию сервиса Яндекс Еда.</p></div>
+          <a class="contact-link" href="https://t.me/yandexhelpcourier" target="_blank" rel="noopener noreferrer">НАПИСАТЬ В TELEGRAM ↗</a>
+        </div>
+      </section>
+      <section class="section" style="padding-top:0">
+        <div class="band">
+          <div><h2>Готов начать свой маршрут?</h2><p>Переходи к регистрации и узнай подробности на официальной странице сервиса.</p></div>
+          <a class="btn btn-yellow" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ К РЕГИСТРАЦИИ ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand"><a class="brand" href="#top"><span class="mark">З</span> Зумер</a><p>Зумер - персонаж проекта, который помогает будущим курьерам сориентироваться и сделать первый шаг.</p></div>
+        <div class="legal"><strong>Оператор проекта</strong><br>Индивидуальный предприниматель Темирханов Иван Андреевич<br>ИНН: 261200859701<br>ОГРНИП: 324265100015513<br>Адрес: 357870, Россия, Ставропольский край, Курский район, село Эдиссия, улица Шаумяна, дом 12.<br>Почта: <a href="mailto:myeasystart@yandex.ru">myeasystart@yandex.ru</a></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Зумер</span><a href="/ru/privacy.html">Политика конфиденциальности</a><span>Зумер не является самим сервисом Яндекс Еда. Регистрация проходит на стороне сервиса.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
