@@ -60,7 +60,7 @@
 <div class="journey-modes"><label><input type="radio" name="journey-mode" value="foot"> Пиёда</label><label><input type="radio" name="journey-mode" value="bike"> Бо велосипед</label><label><input type="radio" name="journey-mode" value="car"> Бо мошин</label></div>
 <p class="journey-small">Ин танҳо интихоби шумост, на тасдиқи қабули кормандон ё дастрасии ин усул. Вариантҳои ҷориро худи хизматрасонӣ нишон медиҳад.</p>
 <div class="journey-selection" id="journey-selection" hidden><strong>Интихоби шумо</strong><p id="journey-selection-text"></p></div>
-</div><div class="journey-checklist"><strong>Пеш аз бақайдгирӣ 3 чизро санҷед</strong>
+</div><div class="journey-checklist"><strong>4. Пеш аз бақайдгирӣ 3 чизро санҷед</strong>
 <label><input type="checkbox" class="journey-check"> Дастури кишвари худро хондам</label>
 <label><input type="checkbox" class="journey-check"> Талаботи ҳуҷҷатҳо ва ҳуқуқи корро санҷидам</label>
 <label><input type="checkbox" class="journey-check"> Шаҳрро интихоб кардам ва барои санҷиши хизматрасонӣ омодаам</label>
@@ -149,7 +149,7 @@
   if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
   selection.hidden=!(c&&m);
   if(c&&m){selectionText.textContent='Шаҳр: '+c+' · Тарзи расонидан: '+m.parentNode.textContent.trim();
-   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'tg'});window.ym(114228829,'reachGoal','city_selected',{city:c,language:'tg'});}}
+   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'tg'});if(city.value==='__other')window.ym(114228829,'reachGoal','city_selected',{city:c,language:'tg'});}}
   }
  }
  city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'tg'});updatePreferences();});
