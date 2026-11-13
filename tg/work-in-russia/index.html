@@ -25,7 +25,7 @@
 }
 
 /* localized interactive journey */
-.journey-select{display:block;width:100%;margin:10px 0 14px;padding:14px 12px;border:1px solid #ddd;border-radius:12px;background:#fff;color:#191919;font:inherit;min-height:50px}.journey-result{margin-top:16px;padding-top:16px;border-top:1px solid #ddd}.journey-checklist{display:grid;gap:12px;margin-top:16px;padding:16px;border:1px solid #e6e6e0;border-radius:14px}.journey-checklist label{display:flex;gap:10px;align-items:flex-start;line-height:1.45}.journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:#b28c00}.journey-progress{height:9px;background:#e8e5d9;border-radius:99px;overflow:hidden}.journey-progress span{display:block;width:0;height:100%;background:#31845b;transition:width .2s ease}.journey-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;margin:8px 8px 8px 0;border-radius:12px;background:#fff7cc;border:1px solid #d6b500;color:#302600;font-weight:700;text-decoration:none}.journey-button.primary{background:#ffd400;color:#171717}.journey-small{font-size:13px;color:#666}
+.journey-select{display:block;width:100%;margin:10px 0 14px;padding:14px 12px;border:1px solid #ddd;border-radius:12px;background:#fff;color:#191919;font:inherit;min-height:50px}.journey-result{margin-top:16px;padding-top:16px;border-top:1px solid #ddd}.journey-checklist{display:grid;gap:12px;margin-top:16px;padding:16px;border:1px solid #e6e6e0;border-radius:14px}.journey-checklist label{display:flex;gap:10px;align-items:flex-start;line-height:1.45}.journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:#b28c00}.journey-progress{height:9px;background:#e8e5d9;border-radius:99px;overflow:hidden}.journey-progress span{display:block;width:0;height:100%;background:#31845b;transition:width .2s ease}.journey-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;margin:8px 8px 8px 0;border-radius:12px;background:#fff7cc;border:1px solid #d6b500;color:#302600;font-weight:700;text-decoration:none}.journey-button.primary{background:#ffd400;color:#171717}.journey-small{font-size:13px;color:#666}.journey-preferences{display:grid;gap:10px;margin:18px 0;padding:16px;border:1px solid #e6e6e0;border-radius:14px}.journey-modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.journey-modes label{display:flex;gap:9px;align-items:center;padding:12px;border:1px solid #ddd;border-radius:10px;min-height:48px}.journey-modes input{width:20px;height:20px;accent-color:#b28c00}.journey-selection{padding:12px;background:#fff7cc;border-radius:10px}
 </style><link rel="alternate" hreflang="ky-KG" href="https://zumerai.ru/ky/work-in-russia/"><!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -51,7 +51,16 @@
 <div id="journey-result" class="journey-result" hidden aria-live="polite">
 <p><strong id="journey-country-name"></strong>: Аввал дастури кишвари худро кушоед.</p>
 <a id="journey-guide" class="journey-button" href="#">Дастури манро кушоед</a>
-<div class="journey-checklist"><strong>Пеш аз бақайдгирӣ 3 чизро санҷед</strong>
+<div class="journey-preferences">
+<strong>2. Дар кадом шаҳр кор кардан мехоҳед?</strong>
+<label for="journey-city">Шаҳр</label>
+<select id="journey-city" class="journey-select"><option value="">Масалан, Калининград</option><option value="Калининград">Калининград</option><option value="Екатеринбург">Екатеринбург</option><option value="Уфа">Уфа</option><option value="__other">Шаҳри дигар</option></select>
+<input id="journey-city-other" class="journey-select" type="text" placeholder="Масалан, Калининград" maxlength="80" hidden>
+<strong>3. Чӣ гуна фармоиш расонидан мехоҳед?</strong>
+<div class="journey-modes"><label><input type="radio" name="journey-mode" value="foot"> Пиёда</label><label><input type="radio" name="journey-mode" value="bike"> Бо велосипед</label><label><input type="radio" name="journey-mode" value="car"> Бо мошин</label></div>
+<p class="journey-small">Ин танҳо интихоби шумост, на тасдиқи қабули кормандон ё дастрасии ин усул. Вариантҳои ҷориро худи хизматрасонӣ нишон медиҳад.</p>
+<div class="journey-selection" id="journey-selection" hidden><strong>Интихоби шумо</strong><p id="journey-selection-text"></p></div>
+</div><div class="journey-checklist"><strong>Пеш аз бақайдгирӣ 3 чизро санҷед</strong>
 <label><input type="checkbox" class="journey-check"> Дастури кишвари худро хондам</label>
 <label><input type="checkbox" class="journey-check"> Талаботи ҳуҷҷатҳо ва ҳуқуқи корро санҷидам</label>
 <label><input type="checkbox" class="journey-check"> Шаҳрро интихоб кардам ва барои санҷиши хизматрасонӣ омодаам</label>
@@ -130,6 +139,21 @@
  if(select.value)renderSelection(false);
  checks.forEach(function(x){x.addEventListener('change',update);});
  document.getElementById('journey-guide').addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value,language:'tg'});});
+
+ var city=document.getElementById('journey-city'),other=document.getElementById('journey-city-other'),selection=document.getElementById('journey-selection'),selectionText=document.getElementById('journey-selection-text'),modeInputs=Array.prototype.slice.call(document.querySelectorAll('input[name="journey-mode"]'));
+ function chosenCity(){return city.value==='__other'?other.value.trim():city.value;}
+ function updatePreferences(){
+  var c=chosenCity(),m=modeInputs.filter(function(x){return x.checked;})[0];
+  other.hidden=city.value!=='__other';
+  if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
+  selection.hidden=!(c&&m);
+  if(c&&m){selectionText.textContent='Шаҳр: '+c+' · Тарзи расонидан: '+m.parentNode.textContent.trim();
+   if(typeof window.ym==='function')window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'tg'});
+  }
+ }
+ city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'tg'});updatePreferences();});
+ other.addEventListener('input',updatePreferences);
+ modeInputs.forEach(function(x){x.addEventListener('change',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','delivery_mode_selected',{delivery_mode:x.value,language:'tg'});updatePreferences();});});
 })();
 </script>
 </body></html>
