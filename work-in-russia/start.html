@@ -38,7 +38,7 @@
 .journey-checklist label{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
 .journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:var(--accent)}
 .journey-progress{height:9px;background:#3a2c51;border-radius:99px;overflow:hidden}
-.journey-progress span{display:block;width:0;height:100%;background:var(--green);transition:width .2s ease}
+.journey-preferences{display:grid;gap:10px;margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:14px}.journey-modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.journey-modes label{display:flex;gap:9px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:10px;min-height:48px}.journey-modes input{width:20px;height:20px;accent-color:var(--accent)}.journey-selection{padding:12px;background:#2a2038;border-radius:10px}.journey-progress span{display:block;width:0;height:100%;background:var(--green);transition:width .2s ease}
 </style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -74,7 +74,16 @@
 <div id="journey-result" class="journey-result" hidden aria-live="polite">
 <p><b id="journey-country-name"></b>: сначала откройте инструкцию для вашей страны.</p>
 <a id="journey-guide" class="btn secondary" href="#">Открыть мою инструкцию</a>
-<div class="journey-checklist">
+<div class="journey-preferences">
+<strong>2. Где планируете работать?</strong>
+<label for="journey-city">Город</label>
+<select id="journey-city" class="journey-select"><option value="">Например, Калининград</option><option value="Калининград">Калининград</option><option value="Екатеринбург">Екатеринбург</option><option value="Уфа">Уфа</option><option value="__other">Другой город</option></select>
+<input id="journey-city-other" class="journey-select" type="text" placeholder="Например, Калининград" maxlength="80" hidden>
+<strong>3. Как планируете доставлять?</strong>
+<div class="journey-modes"><label><input type="radio" name="journey-mode" value="foot"> Пешком</label><label><input type="radio" name="journey-mode" value="bike"> На велосипеде</label><label><input type="radio" name="journey-mode" value="car"> На автомобиле</label></div>
+<p class="small">Это ваши предпочтения, а не подтверждение набора или доступности способа доставки. Актуальные варианты покажет сервис для выбранного города.</p>
+<div class="journey-selection" id="journey-selection" hidden><strong>Ваш выбор</strong><p id="journey-selection-text"></p></div>
+</div><div class="journey-checklist">
 <b>2. Перед регистрацией проверьте три вещи</b>
 <label><input type="checkbox" class="journey-check"> Я прочитал инструкцию для своей страны</label>
 <label><input type="checkbox" class="journey-check"> Я проверил требования к документам и праву на работу</label>
@@ -199,6 +208,21 @@
  checks.forEach(function(c){c.addEventListener('change',update);});
  var guide=document.getElementById('journey-guide');
  guide.addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','onboarding_continue_click',{country:select.value});});
+
+ var city=document.getElementById('journey-city'),other=document.getElementById('journey-city-other'),selection=document.getElementById('journey-selection'),selectionText=document.getElementById('journey-selection-text'),modeInputs=Array.prototype.slice.call(document.querySelectorAll('input[name="journey-mode"]'));
+ function chosenCity(){return city.value==='__other'?other.value.trim():city.value;}
+ function updatePreferences(){
+  var c=chosenCity(),m=modeInputs.filter(function(x){return x.checked;})[0];
+  other.hidden=city.value!=='__other';
+  if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
+  selection.hidden=!(c&&m);
+  if(c&&m){selectionText.textContent='Город: '+c+' · Способ доставки: '+m.parentNode.textContent.trim();
+   if(typeof window.ym==='function')window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ru'});
+  }
+ }
+ city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'ru'});updatePreferences();});
+ other.addEventListener('input',updatePreferences);
+ modeInputs.forEach(function(x){x.addEventListener('change',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','delivery_mode_selected',{delivery_mode:x.value,language:'ru'});updatePreferences();});});
 })();
 </script>
 
