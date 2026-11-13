@@ -84,7 +84,7 @@
 <p class="small">Это ваши предпочтения, а не подтверждение набора или доступности способа доставки. Актуальные варианты покажет сервис для выбранного города.</p>
 <div class="journey-selection" id="journey-selection" hidden><strong>Ваш выбор</strong><p id="journey-selection-text"></p></div>
 </div><div class="journey-checklist">
-<b>2. Перед регистрацией проверьте три вещи</b>
+<b>4. Перед регистрацией проверьте три вещи</b>
 <label><input type="checkbox" class="journey-check"> Я прочитал инструкцию для своей страны</label>
 <label><input type="checkbox" class="journey-check"> Я проверил требования к документам и праву на работу</label>
 <label><input type="checkbox" class="journey-check"> Я определился с городом и готов пройти проверку сервиса</label>
@@ -218,7 +218,7 @@
   if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
   selection.hidden=!(c&&m);
   if(c&&m){selectionText.textContent='Город: '+c+' · Способ доставки: '+m.parentNode.textContent.trim();
-   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ru'});window.ym(114228829,'reachGoal','city_selected',{city:c,language:'ru'});}}
+   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ru'});if(city.value==='__other')window.ym(114228829,'reachGoal','city_selected',{city:c,language:'ru'});}}
   }
  }
  city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'ru'});updatePreferences();});
