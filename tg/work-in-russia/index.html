@@ -23,6 +23,9 @@
   a{overflow-wrap:anywhere}
   img,video,iframe{max-width:100%;height:auto}
 }
+
+/* localized interactive journey */
+.journey-select{display:block;width:100%;margin:10px 0 14px;padding:14px 12px;border:1px solid #ddd;border-radius:12px;background:#fff;color:#191919;font:inherit;min-height:50px}.journey-result{margin-top:16px;padding-top:16px;border-top:1px solid #ddd}.journey-checklist{display:grid;gap:12px;margin-top:16px;padding:16px;border:1px solid #e6e6e0;border-radius:14px}.journey-checklist label{display:flex;gap:10px;align-items:flex-start;line-height:1.45}.journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:#b28c00}.journey-progress{height:9px;background:#e8e5d9;border-radius:99px;overflow:hidden}.journey-progress span{display:block;width:0;height:100%;background:#31845b;transition:width .2s ease}.journey-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;margin:8px 8px 8px 0;border-radius:12px;background:#fff7cc;border:1px solid #d6b500;color:#302600;font-weight:700;text-decoration:none}.journey-button.primary{background:#ffd400;color:#171717}.journey-small{font-size:13px;color:#666}
 </style><link rel="alternate" hreflang="ky-KG" href="https://zumerai.ru/ky/work-in-russia/"><!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -39,7 +42,23 @@
 </head><body><div class="wrap"><header><a class="brand" href="/tg/"><span>Z</span>Zumer</a><nav class="nav"><a href="/tg/">Саҳифаи асосӣ</a><a href="/tg/guide.html">Роҳнамо</a><a href="/uz/work-in-russia/">O‘zbekcha</a></nav></header>
 <main><div class="hero"><div class="eyebrow">Кор ва расонидани фармоиш дар Русия</div><h1>Чӣ тавр дар Русия кори хаткашонро оғоз кардан мумкин аст?</h1><p class="lead">Мехоҳед ҳамчун хаткашони Yandex Eats кор кунед? Пеш аз бақайдгирӣ ҳуҷҷатҳоеро санҷед, ки ба шаҳрвандӣ ва мақоми ҳуқуқии шумо мувофиқанд. Zumer барои фаҳмидани қадамҳои бақайдгирӣ ва ёфтани маълумоти расмӣ кӯмак мекунад.</p></div>
 <div class="notice"><strong>Муҳим:</strong> ҳуқуқи будубош дар Русия худ аз худ ҳуқуқи кор карданро намедиҳад. Талабот аз шаҳрвандӣ, мақом, минтақа ва шакли ҳамкорӣ вобаста аст. Пеш аз оғози кор маълумотро аз манбаъҳои расмӣ санҷед.</div>
-<div class="content"><h2>1. Кишвари шаҳрвандии худро интихоб кунед</h2>
+<section class="content journey" id="my-route" aria-labelledby="journey-title">
+<div class="eyebrow">Zumer · Роҳи шахсии шумо</div>
+<h2 id="journey-title">Роҳи шахсии шумо</h2>
+<p>Шаҳрвандии худро интихоб кунед. Мо дастури мувофиқ ва қадамҳои минбаъдаро нишон медиҳем. Ба мо фиристодани ягон ҳуҷҷат лозим нест.</p>
+<label for="journey-country"><strong>Шаҳрвандӣ</strong></label>
+<select id="journey-country" class="journey-select"><option value="">Кишварро интихоб кунед</option><option value="tajikistan" selected>Тоҷикистон</option><option value="uzbekistan">Ӯзбекистон</option><option value="kyrgyzstan">Қирғизистон</option><option value="kazakhstan">Қазоқистон</option><option value="turkmenistan">Туркманистон</option></select>
+<div id="journey-result" class="journey-result" hidden aria-live="polite">
+<p><strong id="journey-country-name"></strong>: Аввал дастури кишвари худро кушоед.</p>
+<a id="journey-guide" class="journey-button" href="#">Дастури манро кушоед</a>
+<div class="journey-checklist"><strong>Пеш аз бақайдгирӣ 3 чизро санҷед</strong>
+<label><input type="checkbox" class="journey-check"> Дастури кишвари худро хондам</label>
+<label><input type="checkbox" class="journey-check"> Талаботи ҳуҷҷатҳо ва ҳуқуқи корро санҷидам</label>
+<label><input type="checkbox" class="journey-check"> Шаҳрро интихоб кардам ва барои санҷиши хизматрасонӣ омодаам</label>
+<div class="journey-progress" role="progressbar" aria-label="Пеш аз бақайдгирӣ 3 чизро санҷед" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span id="journey-progress-fill"></span></div>
+<p class="journey-small" id="journey-progress-label">Омода: 0 аз 3</p>
+<a id="journey-register" class="journey-button primary" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt">Ба бақайдгирӣ гузаштан</a>
+<p class="journey-small">Ин қайдҳо танҳо барои роҳнамоии шумоанд. Онҳо санҷиши ҳуҷҷат ё кафолати қабул шудан нестанд.</p></div></div></section><div class="content"><h2>1. Кишвари шаҳрвандии худро интихоб кунед</h2>
 <a class="country" href="/work-in-russia/tajikistan.html"><strong>Шаҳрвандони Тоҷикистон</strong>Роҳнамо оид ба патент, ҳуҷҷатҳо ва тартиби кор</a>
 <a class="country" href="/work-in-russia/uzbekistan.html"><strong>Шаҳрвандони Ӯзбекистон</strong>Роҳнамо оид ба патент ва бақайдгирии муҳоҷират</a>
 <a class="country" href="/work-in-russia/kyrgyzstan.html"><strong>Шаҳрвандони Қирғизистон</strong>Қоидаҳои Иттиҳоди иқтисодии АвруОсиё</a>
@@ -100,4 +119,15 @@
 })();
 </script>
 <!-- /Zumer funnel events -->
+<script>
+(function(){
+ var select=document.getElementById('journey-country'),result=document.getElementById('journey-result');if(!select||!result)return;
+ var guides={tajikistan:{name:'Тоҷикистон',url:'/work-in-russia/tajikistan.html'},uzbekistan:{name:'Ӯзбекистон',url:'/work-in-russia/uzbekistan.html'},kyrgyzstan:{name:'Қирғизистон',url:'/work-in-russia/kyrgyzstan.html'},kazakhstan:{name:'Қазоқистон',url:'/work-in-russia/kazakhstan.html'},turkmenistan:{name:'Туркманистон',url:'/work-in-russia/turkmenistan.html'}};
+ var checks=Array.prototype.slice.call(document.querySelectorAll('.journey-check')),progress=document.querySelector('.journey-progress'),fill=document.getElementById('journey-progress-fill'),label=document.getElementById('journey-progress-label');
+ function update(){var count=checks.filter(function(x){return x.checked;}).length;fill.style.width=(count/3*100)+'%';progress.setAttribute('aria-valuenow',String(count));label.textContent=count===3?'Шумо барои гузаштан ба қадами навбатӣ омодаед.':'Омода: 0 аз 3'.replace('0',String(count));}
+ select.addEventListener('change',function(){var item=guides[select.value];result.hidden=!item;if(!item)return;document.getElementById('journey-country-name').textContent=item.name;document.getElementById('journey-guide').href=item.url;checks.forEach(function(x){x.checked=false;});update();if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_country_selected',{country:select.value,language:'tg'});});
+ checks.forEach(function(x){x.addEventListener('change',update);});
+ document.getElementById('journey-guide').addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value,language:'tg'});});
+})();
+</script>
 </body></html>
