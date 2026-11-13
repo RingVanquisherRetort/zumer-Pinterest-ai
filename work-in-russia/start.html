@@ -39,7 +39,6 @@
 .journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:var(--accent)}
 .journey-progress{height:9px;background:#3a2c51;border-radius:99px;overflow:hidden}
 .journey-progress span{display:block;width:0;height:100%;background:var(--green);transition:width .2s ease}
-#journey-register[aria-disabled="true"]{opacity:.45;pointer-events:none}
 </style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -82,7 +81,7 @@
 <label><input type="checkbox" class="journey-check"> Я определился с городом и готов пройти проверку сервиса</label>
 <div class="journey-progress" role="progressbar" aria-label="Готовность к следующему шагу" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span id="journey-progress-fill"></span></div>
 <p class="small" id="journey-progress-label">Готово: 0 из 3 шагов</p>
-<a id="journey-register" class="btn" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" aria-disabled="true">Перейти к регистрации</a>
+<a id="journey-register" class="btn" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt">Перейти к регистрации</a>
 <p class="small">Отметки помогают вам ориентироваться и не являются проверкой документов или гарантией подключения. Окончательные требования покажет Яндекс Про или партнёр.</p>
 </div>
 </div>
@@ -184,8 +183,8 @@
   fill.style.width=(count/3*100)+'%';
   progress.setAttribute('aria-valuenow',String(count));
   label.textContent='Готово: '+count+' из 3 шагов';
-  register.setAttribute('aria-disabled',count===3?'false':'true');
-  if(count===3&&typeof window.ym==='function')window.ym(114228829,'reachGoal','registration_ready');
+  label.textContent=count===3?'Вы готовы перейти к заявке.':'Готово: '+count+' из 3 шагов. Можно продолжить в любой момент.';
+  
  }
  select.addEventListener('change',function(){
   var item=guides[select.value];
@@ -195,14 +194,11 @@
   document.getElementById('journey-guide').href=item.url;
   checks.forEach(function(c){c.checked=false;});
   update();
-  if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_country_selected',{country:select.value});
+  if(typeof window.ym==='function')window.ym(114228829,'reachGoal','country_select',{country:select.value});
  });
  checks.forEach(function(c){c.addEventListener('change',update);});
  var guide=document.getElementById('journey-guide');
- guide.addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value});});
- register.addEventListener('click',function(e){
-  if(checks.some(function(c){return !c.checked;})){e.preventDefault();return;}
- });
+ guide.addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','onboarding_continue_click',{country:select.value});});
 })();
 </script>
 
