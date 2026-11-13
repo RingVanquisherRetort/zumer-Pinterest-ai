@@ -60,7 +60,7 @@
 <div class="journey-modes"><label><input type="radio" name="journey-mode" value="foot"> Жөө</label><label><input type="radio" name="journey-mode" value="bike"> Велосипед менен</label><label><input type="radio" name="journey-mode" value="car"> Унаа менен</label></div>
 <p class="journey-small">Бул сиздин каалооңуз гана. Жумушка кабыл алуу же жеткирүү түрүнүн жеткиликтүүлүгү ырасталбайт. Учурдагы варианттарды сервис көрсөтөт.</p>
 <div class="journey-selection" id="journey-selection" hidden><strong>Сиздин тандооңуз</strong><p id="journey-selection-text"></p></div>
-</div><div class="journey-checklist"><strong>Катталуудан мурда 3 нерсени текшериңиз</strong>
+</div><div class="journey-checklist"><strong>4. Катталуудан мурда 3 нерсени текшериңиз</strong>
 <label><input type="checkbox" class="journey-check"> Өлкөм үчүн нускаманы окудум</label>
 <label><input type="checkbox" class="journey-check"> Документтерге жана иштөө укугуна талаптарды текшердим</label>
 <label><input type="checkbox" class="journey-check"> Шаарды тандадым жана сервистин текшерүүсүнө даярмын</label>
@@ -152,7 +152,7 @@
   if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
   selection.hidden=!(c&&m);
   if(c&&m){selectionText.textContent='Шаар: '+c+' · Жеткирүү түрү: '+m.parentNode.textContent.trim();
-   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ky'});window.ym(114228829,'reachGoal','city_selected',{city:c,language:'ky'});}}
+   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ky'});if(city.value==='__other')window.ym(114228829,'reachGoal','city_selected',{city:c,language:'ky'});}}
   }
  }
  city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'ky'});updatePreferences();});
