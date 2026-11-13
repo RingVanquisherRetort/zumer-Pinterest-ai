@@ -30,6 +30,16 @@
   a{overflow-wrap:anywhere}
   img,video,iframe{max-width:100%;height:auto}
 }
+
+/* guided migrant journey */
+.journey-select{display:block;width:100%;margin:10px 0 14px;padding:14px 12px;border:1px solid var(--line);border-radius:12px;background:#100b1d;color:var(--text);font:inherit;min-height:50px}
+.journey-result{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.journey-checklist{display:grid;gap:12px;margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:14px}
+.journey-checklist label{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.journey-checklist input{width:20px;height:20px;flex:0 0 20px;accent-color:var(--accent)}
+.journey-progress{height:9px;background:#3a2c51;border-radius:99px;overflow:hidden}
+.journey-progress span{display:block;width:0;height:100%;background:var(--green);transition:width .2s ease}
+#journey-register[aria-disabled="true"]{opacity:.45;pointer-events:none}
 </style>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -49,6 +59,34 @@
 <main>
 <header class="hero"><div class="eyebrow">Zumer · поддержка курьеров</div><h1>Начните путь к работе курьером с понятной инструкцией</h1><p class="lead">Хотите начать доставлять заказы? Не будем грузить вас длинными списками. Выберите страну, проверьте главное и оставьте заявку. Если что-то непонятно, поможем сориентироваться.</p><a class="btn" href="#country">Выбрать свою страну</a><a class="btn secondary" href="https://t.me/yandexhelpcourier" target="_blank" rel="noopener noreferrer">Задать вопрос в Telegram</a></header>
 <div class="notice"><b>Важно:</b> Zumer — независимый партнёрский проект, а не Яндекс Еда и не государственный орган. Мы помогаем с информацией и навигацией, но не выдаём документы, не гарантируем одобрение и не можем изменить решение сервиса. Условия зависят от гражданства, статуса, города и выбранного формата сотрудничества.</div>
+<section class="panel journey" id="my-route" aria-labelledby="journey-title">
+<div class="eyebrow">Ваш персональный маршрут</div>
+<h2 id="journey-title">Подберём следующий шаг за минуту</h2>
+<p class="muted">Выберите гражданство. Мы покажем нужную инструкцию и короткий список действий. Ничего отправлять нам не нужно.</p>
+<label for="journey-country"><b>1. Гражданство</b></label>
+<select id="journey-country" class="journey-select">
+<option value="">Выберите страну</option>
+<option value="tajikistan">Таджикистан</option>
+<option value="uzbekistan">Узбекистан</option>
+<option value="kyrgyzstan">Кыргызстан</option>
+<option value="kazakhstan">Казахстан</option>
+<option value="turkmenistan">Туркменистан</option>
+</select>
+<div id="journey-result" class="journey-result" hidden aria-live="polite">
+<p><b id="journey-country-name"></b>: сначала откройте инструкцию для вашей страны.</p>
+<a id="journey-guide" class="btn secondary" href="#">Открыть мою инструкцию</a>
+<div class="journey-checklist">
+<b>2. Перед регистрацией проверьте три вещи</b>
+<label><input type="checkbox" class="journey-check"> Я прочитал инструкцию для своей страны</label>
+<label><input type="checkbox" class="journey-check"> Я проверил требования к документам и праву на работу</label>
+<label><input type="checkbox" class="journey-check"> Я определился с городом и готов пройти проверку сервиса</label>
+<div class="journey-progress" role="progressbar" aria-label="Готовность к следующему шагу" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span id="journey-progress-fill"></span></div>
+<p class="small" id="journey-progress-label">Готово: 0 из 3 шагов</p>
+<a id="journey-register" class="btn" href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&amp;user_invite_code=8617ef427efd4aa38d1c8dfd8bbfae57&amp;utm_content=blank&amp;utm_campaign=gpt" aria-disabled="true">Перейти к регистрации</a>
+<p class="small">Отметки помогают вам ориентироваться и не являются проверкой документов или гарантией подключения. Окончательные требования покажет Яндекс Про или партнёр.</p>
+</div>
+</div>
+</section>
 <section class="panel" id="country"><h2>Шаг 1. Выберите страну гражданства</h2><p class="muted">Правила для граждан разных государств отличаются. Начните с отдельной инструкции, чтобы не использовать чужой список документов.</p><div class="countries">
 <a class="country" href="/work-in-russia/tajikistan.html"><b>Таджикистан</b><span class="small">Документы и патент</span></a>
 <a class="country" href="/work-in-russia/uzbekistan.html"><b>Узбекистан</b><span class="small">Документы и патент</span></a>
@@ -124,4 +162,48 @@
 })();
 </script>
 <!-- /Zumer funnel events -->
+<script>
+(function(){
+ var select=document.getElementById('journey-country');
+ var result=document.getElementById('journey-result');
+ if(!select||!result)return;
+ var guides={
+  tajikistan:{name:'Таджикистан',url:'/work-in-russia/tajikistan.html'},
+  uzbekistan:{name:'Узбекистан',url:'/work-in-russia/uzbekistan.html'},
+  kyrgyzstan:{name:'Кыргызстан',url:'/work-in-russia/kyrgyzstan.html'},
+  kazakhstan:{name:'Казахстан',url:'/work-in-russia/kazakhstan.html'},
+  turkmenistan:{name:'Туркменистан',url:'/work-in-russia/turkmenistan.html'}
+ };
+ var checks=Array.prototype.slice.call(document.querySelectorAll('.journey-check'));
+ var progress=document.querySelector('.journey-progress');
+ var fill=document.getElementById('journey-progress-fill');
+ var label=document.getElementById('journey-progress-label');
+ var register=document.getElementById('journey-register');
+ function update(){
+  var count=checks.filter(function(c){return c.checked;}).length;
+  fill.style.width=(count/3*100)+'%';
+  progress.setAttribute('aria-valuenow',String(count));
+  label.textContent='Готово: '+count+' из 3 шагов';
+  register.setAttribute('aria-disabled',count===3?'false':'true');
+  if(count===3&&typeof window.ym==='function')window.ym(114228829,'reachGoal','registration_ready');
+ }
+ select.addEventListener('change',function(){
+  var item=guides[select.value];
+  result.hidden=!item;
+  if(!item)return;
+  document.getElementById('journey-country-name').textContent=item.name;
+  document.getElementById('journey-guide').href=item.url;
+  checks.forEach(function(c){c.checked=false;});
+  update();
+  if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_country_selected',{country:select.value});
+ });
+ checks.forEach(function(c){c.addEventListener('change',update);});
+ var guide=document.getElementById('journey-guide');
+ guide.addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value});});
+ register.addEventListener('click',function(e){
+  if(checks.some(function(c){return !c.checked;})){e.preventDefault();return;}
+ });
+})();
+</script>
+
 </body></html>
