@@ -144,6 +144,7 @@
  document.getElementById('journey-guide').addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value,language:'ky'});});
 
  var city=document.getElementById('journey-city'),other=document.getElementById('journey-city-other'),selection=document.getElementById('journey-selection'),selectionText=document.getElementById('journey-selection-text'),modeInputs=Array.prototype.slice.call(document.querySelectorAll('input[name="journey-mode"]'));
+ var lastRouteKey='';
  function chosenCity(){return city.value==='__other'?other.value.trim():city.value;}
  function updatePreferences(){
   var c=chosenCity(),m=modeInputs.filter(function(x){return x.checked;})[0];
@@ -151,7 +152,7 @@
   if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
   selection.hidden=!(c&&m);
   if(c&&m){selectionText.textContent='Шаар: '+c+' · Жеткирүү түрү: '+m.parentNode.textContent.trim();
-   if(typeof window.ym==='function')window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ky'});
+   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'ky'});window.ym(114228829,'reachGoal','city_selected',{city:c,language:'ky'});}}
   }
  }
  city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'ky'});updatePreferences();});
