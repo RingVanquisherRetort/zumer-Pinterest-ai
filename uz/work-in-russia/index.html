@@ -125,7 +125,9 @@
  var guides={tajikistan:{name:'Tojikiston',url:'/work-in-russia/tajikistan.html'},uzbekistan:{name:'O‘zbekiston',url:'/work-in-russia/uzbekistan.html'},kyrgyzstan:{name:'Qirg‘iziston',url:'/work-in-russia/kyrgyzstan.html'},kazakhstan:{name:'Qozog‘iston',url:'/work-in-russia/kazakhstan.html'},turkmenistan:{name:'Turkmaniston',url:'/work-in-russia/turkmenistan.html'}};
  var checks=Array.prototype.slice.call(document.querySelectorAll('.journey-check')),progress=document.querySelector('.journey-progress'),fill=document.getElementById('journey-progress-fill'),label=document.getElementById('journey-progress-label');
  function update(){var count=checks.filter(function(x){return x.checked;}).length;fill.style.width=(count/3*100)+'%';progress.setAttribute('aria-valuenow',String(count));label.textContent=count===3?'Keyingi bosqichga o‘tishga tayyorsiz.':'Tayyor: 0 / 3'.replace('0',String(count));}
- select.addEventListener('change',function(){var item=guides[select.value];result.hidden=!item;if(!item)return;document.getElementById('journey-country-name').textContent=item.name;document.getElementById('journey-guide').href=item.url;checks.forEach(function(x){x.checked=false;});update();if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_country_selected',{country:select.value,language:'uz'});});
+ function renderSelection(track){var item=guides[select.value];result.hidden=!item;if(!item)return;document.getElementById('journey-country-name').textContent=item.name;document.getElementById('journey-guide').href=item.url;checks.forEach(function(x){x.checked=false;});update();if(track&&typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_country_selected',{country:select.value,language:'uz'});}
+ select.addEventListener('change',function(){renderSelection(true);});
+ if(select.value)renderSelection(false);
  checks.forEach(function(x){x.addEventListener('change',update);});
  document.getElementById('journey-guide').addEventListener('click',function(){if(typeof window.ym==='function')window.ym(114228829,'reachGoal','journey_guide_open',{country:select.value,language:'uz'});});
 })();
