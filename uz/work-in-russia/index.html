@@ -60,7 +60,7 @@
 <div class="journey-modes"><label><input type="radio" name="journey-mode" value="foot"> Piyoda</label><label><input type="radio" name="journey-mode" value="bike"> Velosipedda</label><label><input type="radio" name="journey-mode" value="car"> Avtomobilda</label></div>
 <p class="journey-small">Bu sizning tanlovingiz, ishga qabul yoki yetkazib berish usuli mavjudligining tasdig‘i emas. Amaldagi variantlarni servis ko‘rsatadi.</p>
 <div class="journey-selection" id="journey-selection" hidden><strong>Sizning tanlovingiz</strong><p id="journey-selection-text"></p></div>
-</div><div class="journey-checklist"><strong>Ro‘yxatdan oldin 3 narsani tekshiring</strong>
+</div><div class="journey-checklist"><strong>4. Ro‘yxatdan oldin 3 narsani tekshiring</strong>
 <label><input type="checkbox" class="journey-check"> Mamlakatim uchun yo‘riqnomani o‘qidim</label>
 <label><input type="checkbox" class="journey-check"> Hujjatlarim va ishlash huquqimga qo‘yiladigan talablarni tekshirdim</label>
 <label><input type="checkbox" class="journey-check"> Shaharni tanladim va xizmat tekshiruvidan o‘tishga tayyorman</label>
@@ -149,7 +149,7 @@
   if(city.value==='__other'&&!other.value.trim()){selection.hidden=true;return;}
   selection.hidden=!(c&&m);
   if(c&&m){selectionText.textContent='Shahar: '+c+' · Yetkazib berish usuli: '+m.parentNode.textContent.trim();
-   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'uz'});window.ym(114228829,'reachGoal','city_selected',{city:c,language:'uz'});}}
+   var routeKey=c+'|'+m.value;if(routeKey!==lastRouteKey){lastRouteKey=routeKey;if(typeof window.ym==='function'){window.ym(114228829,'reachGoal','route_preferences_complete',{city:c,delivery_mode:m.value,language:'uz'});if(city.value==='__other')window.ym(114228829,'reachGoal','city_selected',{city:c,language:'uz'});}}
   }
  }
  city.addEventListener('change',function(){if(typeof window.ym==='function'&&city.value&&city.value!=='__other')window.ym(114228829,'reachGoal','city_selected',{city:city.value,language:'uz'});updatePreferences();});
